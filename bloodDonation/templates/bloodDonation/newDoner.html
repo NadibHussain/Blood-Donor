@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blood Donation</title>
+
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+              
+</head>
+<body>
+    
+    <nav>
+        <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Blood Donation</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href=" {% url 'bloodDonation:list'  %} ">Donator List</a></li>
+            <li><a href="{% url 'bloodDonation:newDoner' %}" class="waves-effect waves-light btn-large">Be A Donor</a></li>
+          </ul>
+        </div>
+    </div>  
+      </nav>
+        <div class="container">
+          <h2 class="center">Join As Donor </h2>
+          <form action="/new/" method="post">
+            {% csrf_token %}
+            {{form}}
+            <div class="row">
+                    <div class="input-field col s6">
+                            <select name="gender" required>
+                              <option value="" selected>Please Select Gender</option>
+                              <option value="male">Male</option>
+                              <option value="Female">Female</option>
+                        </select>
+                        <label>Gender Select </label>
+                    </div>
+                    <div class="input-field col s6">
+                            <select name="Blood" required>
+                              <option value="" selected>Please Select Blood Group</option>
+                              <option value="O+">O+</option>
+                              <option value="O-">O-</option>
+                              <option value="A+">A+</option>
+                              <option value="A-">A-</option>
+                              <option value="AB+">AB+</option>
+                              <option value="AB-">AB-</option>
+                              <option value="B+">B+</option>
+                              <option value="B-">B-</option>
+                        </select>
+                        <label>Blood Group Select </label>
+                    </div>
+            </div>
+            
+            <button type="submit" class="waves-effect waves-light btn-large center-align" style="text-align: center">Join</button>
+          </form>
+          
+
+        </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+});
+
+</script> 
+</body>
+</html>
