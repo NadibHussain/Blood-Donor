@@ -6,13 +6,9 @@ from django import forms
 
 class Donator(models.Model):
 
-    Sex_choice = [
-        ('M', 'Male'),
-        ('F', 'Female'),
-    ]
-
+   
     name = models.CharField(max_length=30)
-    sex = models.CharField(max_length=30,choices=Sex_choice)
+    sex = models.CharField(max_length=30)
     contact_number = models.CharField(max_length=20)
     age = models.IntegerField(null=True)
     blood_type= models.CharField(max_length=10)

@@ -30,19 +30,19 @@
         <div class="container">
           <h2 class="center">Join As Donor </h2>
           <form action="/new/" method="post">
-            {% csrf_token %}
+            {% csrf_token %}  
             {{form}}
             <div class="row">
                     <div class="input-field col s6">
-                            <select name="gender" required>
+                            <select name="sex" required>
                               <option value="" selected>Please Select Gender</option>
-                              <option value="male">Male</option>
+                              <option value="Male">Male</option>
                               <option value="Female">Female</option>
                         </select>
                         <label>Gender Select </label>
                     </div>
                     <div class="input-field col s6">
-                            <select name="Blood" required>
+                            <select name="blood_type" required>
                               <option value="" selected>Please Select Blood Group</option>
                               <option value="O+">O+</option>
                               <option value="O-">O-</option>
